@@ -5,6 +5,7 @@
   "author": "Anderson Rodrigues <anddersonrds@gmail.com> (https://github.com/anddersonrds)",
   "main": "index.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
     "test": "echo \"Error: no test especified\" && exit 1"
   },
   "repository": {
@@ -12,14 +13,22 @@
     "url": "git+https://github.com/anddersonrds/ts-tdd-course.git"
   },
   "keywords": [
-    "js", 
-    "ts", 
-    "tdd", 
+    "js",
+    "ts",
+    "tdd",
     "library"
   ],
   "homepage": "https://github.com/anddersonrds/ts-tdd-course#readme",
   "bugs": {
     "url": "https://github.com/anddersonrds/issues"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
 }
