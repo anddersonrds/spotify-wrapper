@@ -6,7 +6,13 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src --max-warnings=0",
-    "test": "echo \"Error: no test especified\" && exit 1"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js  --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc yarn test"
+  },
+  "nyc": {
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"]
   },
   "husky": {
     "hooks": {
@@ -14,7 +20,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*": ["yarn lint --fix"]
+    "src/**/*": [
+      "yarn lint --fix"
+    ]
   },
   "repository": {
     "type": "git",
@@ -32,6 +40,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
     "eslint": "^7.15.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -39,6 +50,8 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.5",
-    "lint-staged": "^10.5.3"
+    "lint-staged": "^10.5.3",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0"
   }
 }
