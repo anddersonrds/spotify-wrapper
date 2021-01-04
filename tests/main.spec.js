@@ -26,4 +26,11 @@ describe('Spotify Wrapper', () => {
       expect(searchPlaylists).to.exist;
     });
   });
+
+  describe('Generic Search', () => {
+    it('Should call fetch function', () => {
+      const artists = search();
+      console.log(artists);
+    });
+  });
 });
