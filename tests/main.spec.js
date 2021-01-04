@@ -2,14 +2,12 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import sinonStubPromise from 'sinon-stub-promise';
 
 import {
   search, searchAlbums, searchArtists, searchTracks, searchPlaylists,
 } from '../src/main';
 
 chai.use(sinonChai);
-sinonStubPromise(sinon);
 
 global.fetch = require('node-fetch');
 
@@ -19,7 +17,7 @@ describe('Spotify Wrapper', () => {
 
   beforeEach(() => {
     fetchedStub = sinon.stub(global, 'fetch');
-    promise = fetchedStub.returns(new Promise((resolve, reject) => {}));
+    fetchedStub.resolves({ json: () => {} });
   });
 
   afterEach(() => {
@@ -73,10 +71,9 @@ describe('Spotify Wrapper', () => {
     });
 
     // it('should return the JSON Data from the Promise', () => {
-    //   promise.resolves({ body: 'json' });
     //   const artists = search('Incubus', 'artist');
-
-    //   expect(artists.resolved).to.be.eql({ body: 'json' });
+    //   expect(artists).to.be.eql({ json: () => {}});
+    //   artists.then((data) => console.log(data))
     // });
   });
 
