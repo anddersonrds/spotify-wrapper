@@ -14,8 +14,13 @@
     "functions": 80,
     "lines": 80,
     "check-coverage": true,
-    "reporter": ["text", "html"],
-    "exclude": ["tests/**"]
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "husky": {
     "hooks": {
@@ -24,7 +29,7 @@
   },
   "lint-staged": {
     "src/**/*": [
-      "yarn lint --fix && yarn test:coverage"
+      "yarn lint --fix"
     ]
   },
   "repository": {
@@ -56,5 +61,8 @@
     "lint-staged": "^10.5.3",
     "mocha": "^8.2.1",
     "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "react": "^17.0.1"
   }
 }
