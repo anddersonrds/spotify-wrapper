@@ -1,7 +1,7 @@
 {
-  "name": "ts-tdd-course",
+  "name": "spotify-wrapper",
   "version": "1.0.0",
-  "description": "Nossa biblioteca do curso de JS com TDD na prática.",
+  "description": "A wrapper to work with the Spotify Web API.",
   "author": "Anderson Rodrigues <anddersonrds@gmail.com> (https://github.com/anddersonrds)",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,9 @@
     "test:coverage": "nyc yarn test"
   },
   "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
     "reporter": ["text", "html"],
     "exclude": ["tests/**"]
   },
@@ -21,12 +24,12 @@
   },
   "lint-staged": {
     "src/**/*": [
-      "yarn lint --fix"
+      "yarn lint --fix && yarn test:coverage"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anddersonrds/ts-tdd-course.git"
+    "url": "git+https://github.com/anddersonrds/spotify-wrapper.git"
   },
   "keywords": [
     "js",
@@ -34,9 +37,9 @@
     "tdd",
     "library"
   ],
-  "homepage": "https://github.com/anddersonrds/ts-tdd-course#readme",
+  "homepage": "https://github.com/anddersonrds/spotify-wrapper#readme",
   "bugs": {
-    "url": "https://github.com/anddersonrds/issues"
+    "url": "https://github.com/anddersonrds/spotify-wrapper/issues"
   },
   "license": "MIT",
   "devDependencies": {
